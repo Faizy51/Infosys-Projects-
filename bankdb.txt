@@ -1,0 +1,29 @@
+create table account (
+accno int not null primary key,
+branch_name varchar(10),
+balance int
+);
+
+insert into account values('1002345641', 'Malleshwaram', 500);
+insert into account values('6554262876', 'Perryridge', 400);
+insert into account values('5463976201', 'Brighton', 900);
+insert into account values('4562001215', 'Mianus', 700);
+insert into account values('1345700217', 'Brighton', 750);
+insert into account values('2986309222', 'Redwood', 700);
+insert into account values('1109474305', 'Round Hill', 350);
+------------------------------------------------------------------------------
+create table customers (
+cid int not null primary key,
+password varchar(20),
+cname varchar(20),
+email varchar(20),
+accno int,
+foreign key(accno) references account(accno));
+
+insert into customers values(12, 'hello12','Adams', 'adams@gmail.com', '1109474305');
+insert into customers values(13, 'hello13','Kumar', 'kumar@gmail.com', '1345700217');
+insert into customers values(14, 'hello14','John', 'john@gmail.com', '4562001215');
+insert into customers values(15, 'hello15','Smith', 'smith@gmail.com', '5463976201');
+insert into customers values(16, 'hello16','Turner', 'turner@gmail.com', '2986309222');
+insert into customers values(17, 'hello17','Mark', 'mark@gmail.com', '1109474305');
+insert into customers values(18, 'hello18','Akil', 'akil@gmail.com', '6554262876');
